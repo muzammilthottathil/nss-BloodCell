@@ -9,13 +9,13 @@ export default function Header({ props }) {
     const [hamburgerStatus, setHamburgerStatus] = useState(false);
 
     const onLogout = () => {
-        console.log(auth.isAuthenticated());
+        // console.log(auth.isAuthenticated());
         auth.logout(() => {
-            props.history.push('/nss-BloodCell/');
+            props.history.push('/');
         });
     };
 
-    console.log(hamburgerStatus);
+    // console.log(hamburgerStatus);
 
     return (
         <div className="header-component">

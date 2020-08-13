@@ -5,9 +5,11 @@ class auth {
     login(cb, username, password) {
         if (username === 'dummy' && password === 'dummy') {
             this.authenticated = true;
-            console.log(username, ' ', password);
+            console.log('username : ', username, ' ', 'password : ', password);
+            console.log('login success');
             cb();
         } else {
+            console.log('login error');
             return;
         }
     }

@@ -10,17 +10,17 @@ export default function DesktopNav({ onLogout }) {
                     <span>Requirements</span>
                     <ul>
                         <li>
-                            <Link to="/nss-BloodCell/main/requirements/active">
+                            <Link to="/main/requirements/active">
                                 Active Requirements
                             </Link>
                         </li>
                         <li>
-                            <Link to="/nss-BloodCell/main/requirements/closed">
+                            <Link to="/main/requirements/closed">
                                 Closed Requirements
                             </Link>
                         </li>
                         <li>
-                            <Link to="/nss-BloodCell/main/requirements/add">
+                            <Link to="/main/requirements/add">
                                 Add Requirement
                             </Link>
                         </li>
@@ -30,14 +30,12 @@ export default function DesktopNav({ onLogout }) {
                     <span>Hospital</span>
                     <ul>
                         <li>
-                            <Link to="/nss-BloodCell/main/hospital/view">
+                            <Link to="/main/hospital/view">
                                 Available Hospitals
                             </Link>
                         </li>
                         <li>
-                            <Link to="/nss-BloodCell/main/hospital/add">
-                                Add Hospital
-                            </Link>
+                            <Link to="/main/hospital/add">Add Hospital</Link>
                         </li>
                     </ul>
                 </li>
@@ -45,14 +43,10 @@ export default function DesktopNav({ onLogout }) {
                     <span>Donor</span>
                     <ul>
                         <li>
-                            <Link to="/nss-BloodCell/main/donors/view">
-                                Available Donors
-                            </Link>
+                            <Link to="/main/donors/view">Available Donors</Link>
                         </li>
                         <li>
-                            <Link to="/nss-BloodCell/main/donors/add">
-                                Add Donor
-                            </Link>
+                            <Link to="/main/donors/add">Add Donor</Link>
                         </li>
                     </ul>
                 </li>

@@ -13,7 +13,7 @@ export const ProtectedRoute = ({ component: Component, ...rest }) => {
                     return (
                         <Redirect
                             to={{
-                                pathname: '/nss-BloodCell/',
+                                pathname: '/',
                                 state: {
                                     from: props.location
                                 }

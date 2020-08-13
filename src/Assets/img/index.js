@@ -8,3 +8,7 @@ export const nssLogo = require('./nssLogo.svg');
 export const twoNurse = require('./two_nurse.svg');
 export const hamburgerLines = require('./hamburger.svg');
 export const hamburgerCross = require('./cross.svg');
+export const addIcon = require('./addIcon.svg');
+export const showDetailIcon = require('./info.svg');
+export const closeIcon = require('./closeIcon.svg');
+export const assignIcon = require('./assignIcon.svg');
