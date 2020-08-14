@@ -21,7 +21,7 @@ export default function HospitalCard({ details }) {
 
             <div className="contact">
                 <img src={phone} alt="" />
-                <div>{details.contact}</div>
+                <div>{details.contactNo}</div>
             </div>
         </div>
     );

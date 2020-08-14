@@ -4,7 +4,7 @@ export default function(state = null, action) {
     switch(action.type) {
         case FETCH_DONORS:
             // console.log(action.payload);
-            return action.payload.donors;
+            return action.payload.donors || null;
         default:
             return state;
     }

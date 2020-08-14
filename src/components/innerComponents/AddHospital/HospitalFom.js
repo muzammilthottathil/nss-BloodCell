@@ -1,9 +1,10 @@
 import React from 'react';
 import { useForm } from '../../useForm';
-
+import { connect } from 'react-redux';
+import * as actions from '../../../actions';
 import './HospitalFomStyle/HospitalFomStyle.css';
 
-export default function HospitalFom({ props }) {
+function HospitalFom(state) {
     const [value, handleChange] = useForm({
         hospitalName: '',
         hospitalAddress: '',
@@ -18,8 +19,15 @@ export default function HospitalFom({ props }) {
         console.log(value.hospitalLandmark);
         console.log(value.contact);
 
+        state.addHospital({ 
+            name: value.hospitalName, 
+            address: value.hospitalAddress, 
+            landmark: value.hospitalLandmark, 
+            contactNo: value.contact 
+        });
+
         setTimeout(() => {
-            props.history.push('/main/hospital/view');
+            state.props.history.push('/main/hospital/view');
         }, 2000);
     };
     return (
@@ -76,3 +84,5 @@ export default function HospitalFom({ props }) {
         </div>
     );
 }
+
+export default connect(null, actions)(HospitalFom);

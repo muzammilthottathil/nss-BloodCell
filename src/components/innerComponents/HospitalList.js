@@ -62,17 +62,8 @@ function HospitalList(props) {
         flexWrap: 'wrap',
         justifyContent: 'space-around'
     };
-
-    // const donorsDataSet = useSelector(state => state.donors);
+    
     const hospitals = useSelector(state => state.hospitals)
-
-
-    // const getDonorList = () => {
-    //     if(!donorsDataSet) {
-    //         console.log('Async call for fetching donors initiated')
-    //         props.fetchDonors();
-    //     };
-    // }
 
     const getHospitalList = () => {
         if(!hospitals) {
@@ -81,32 +72,9 @@ function HospitalList(props) {
         }
     }
 
-    // useEffect(() => {
-    //     findTypeOfView();
-    //     getDonorList();
-    // });
-
     useEffect(() => {
         getHospitalList();
     })
-
-    // const renderHelper = () => {
-    //     if(donorsDataSet) {
-    //         return(
-    //             <div style={style}>
-    //                 {donorsDataSet.map((data, key) => (
-    //                     <DonorCard
-    //                         key={key}
-    //                         details={data}
-    //                         defaultValue={typeOfView}
-    //                     />
-    //                 ))}
-    //             </div>
-    //         )    
-    //     } else {
-    //         return <div>Waiting</div>
-    //     }
-    // }
 
     const renderHelper = () => {
         console.log(hospitals);
@@ -120,14 +88,6 @@ function HospitalList(props) {
             )
         }
     }
-
-    // return (
-    //     <div>
-    //         <HeadingInside headingContentInside="Available Donors" />
-    //         {renderHelper()}
-            
-    //     </div>
-    // );
 
     return (
         <div>

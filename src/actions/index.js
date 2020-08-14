@@ -1,5 +1,6 @@
 import axios from 'axios';
-import { FETCH_USER, LOGIN_USER, LOGOUT_USER, FETCH_DONORS, FETCH_ACTIVE_REQUIREMENTS, FETCH_CLOSED_REQUIREMENTS } from './types';
+import { FETCH_USER, LOGIN_USER, LOGOUT_USER, FETCH_DONORS, FETCH_ACTIVE_REQUIREMENTS, FETCH_CLOSED_REQUIREMENTS, FETCH_HOSPITALS } from './types';
+import { RESET_HOSPITALS } from './types'
 
 
 export const fetchUser = () => async dispatch => {
@@ -71,10 +72,20 @@ export const fetchClosedRequirements = () => async dispatch => {
 export const fetchHospitals = () => async dispatch => {
 	try {
 		const res = await axios.get('/hospital');
-		dispatch({ type: FETCH_CLOSED_REQUIREMENTS, payload: res.data })
+		dispatch({ type: FETCH_HOSPITALS, payload: res.data })
 	} catch(err) {
 		console.log(err.message);
 	}
+}
+
+export const addHospital = (hospital) => async dispatch => {
+	try {
+		const res = await axios.post('/hospital/add', hospital);
+		dispatch({ type: RESET_HOSPITALS });
+	} catch(err) {
+		console.log(err.message);
+	}
+	
 }
 
 
