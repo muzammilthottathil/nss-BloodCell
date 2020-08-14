@@ -5,7 +5,7 @@ import './DonorCardStyle/DonorCardStyle.css';
 import { Link } from 'react-router-dom';
 
 export default function DonorCard({ details, defaultValue = true }) {
-    console.log(details);
+    // console.log(details);
     return (
         <div className="donor-card-component">
             <div className="last-donation">
@@ -48,12 +48,12 @@ export default function DonorCard({ details, defaultValue = true }) {
             </div>
             <div className="button">
                 {(defaultValue && (
-                    <Link>
+                    <Link to="#">
                         <img src={donorEditIcon} alt="" />
                         Edit
                     </Link>
                 )) || (
-                    <Link>
+                    <Link to="#">
                         <img src={assignIcon} alt="" />
                         Assign
                     </Link>

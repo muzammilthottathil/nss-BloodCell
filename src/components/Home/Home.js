@@ -26,7 +26,6 @@ class Home extends Component {
                     </div>
                 );
             default:
-                // return <div><Main /></div>
                 return (
                     <div>
                         <Redirect

@@ -14,7 +14,7 @@ export default function ActiveClosedCard({ details, type }) {
         findTypeOfCard();
     });
 
-    console.log('active closed card');
+    // console.log('active closed card');
 
     return (
         <div className="active-closed-card">
@@ -28,7 +28,7 @@ export default function ActiveClosedCard({ details, type }) {
 
             <div className="bystander-name">
                 <p>Bystander</p>
-                <div>{details.byStander}</div>
+                <div>{details.bystander}</div>
             </div>
 
             <div className="blood-group">
@@ -39,18 +39,18 @@ export default function ActiveClosedCard({ details, type }) {
             <div className="unit-assigned-details">
                 <div className="no-units">
                     <p>No. of Units</p>
-                    <div>{details.numberOfUnits}</div>
+                    <div>{details.noOfUnits}</div>
                 </div>
 
                 <div className="donors-assigned">
                     <p>Donors Assigned</p>
-                    <div>{details.donorsAssigned}</div>
+                    <div>{details.donor}</div>
                 </div>
             </div>
 
             <div className="button-section">
                 <div className="show-details">
-                    <Link>
+                    <Link to="#">
                         <img src={showDetailIcon} alt="" />
                         Details
                     </Link>
