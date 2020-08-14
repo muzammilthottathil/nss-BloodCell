@@ -1,0 +1,109 @@
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+.add-hospital-form {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  width: 100%;
+}
+
+.add-hospital-form form {
+  font-family: 'Poppins', sans-serif;
+  color: #494d57;
+  width: 95%;
+}
+
+@media (min-width: 768px) and (max-width: 1023px) {
+  .add-hospital-form form {
+    max-width: 450px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .add-hospital-form form {
+    max-width: 500px;
+  }
+}
+
+.add-hospital-form form div {
+  background: #ffffff;
+  -webkit-box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.23);
+          box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.23);
+  border-radius: 5px;
+  padding: 10px;
+  margin: 3% 0;
+}
+
+.add-hospital-form form div p {
+  color: rgba(73, 77, 87, 0.7);
+  padding: 5px;
+  padding-top: 0;
+}
+
+.add-hospital-form form div input,
+.add-hospital-form form div textarea {
+  background: #f4f4f4;
+  width: 100%;
+  border-radius: 5px;
+  padding: 10px;
+  border: none;
+  color: #494d57;
+}
+
+.add-hospital-form form div input:focus,
+.add-hospital-form form div textarea:focus {
+  border: 1px solid #a9a9aa;
+  -webkit-box-shadow: 0px 1px 4px rgba(0, 0, 0, 0.25);
+          box-shadow: 0px 1px 4px rgba(0, 0, 0, 0.25);
+}
+
+.add-hospital-form form .button {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  background: none;
+  -webkit-box-shadow: none;
+          box-shadow: none;
+  width: 100%;
+}
+
+.add-hospital-form form .button button {
+  cursor: pointer;
+  background: #6f88e2;
+  border-radius: 9px;
+  padding: 11px 30px;
+  color: #fff;
+  outline: none;
+  border: none;
+  -webkit-transition: -webkit-transform ease-in-out 100ms;
+  transition: -webkit-transform ease-in-out 100ms;
+  transition: transform ease-in-out 100ms;
+  transition: transform ease-in-out 100ms, -webkit-transform ease-in-out 100ms;
+}
+
+.add-hospital-form form .button button:active {
+  -webkit-transform: scale(0.9);
+          transform: scale(0.9);
+}
+/*# sourceMappingURL=HospitalFomStyle.css.map */

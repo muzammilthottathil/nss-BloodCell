@@ -1,0 +1,140 @@
+$pixel-width: 411px;
+$tablet-width: 768px;
+$desktop-width: 1024px;
+
+@mixin pixel {
+    @media (min-width: #{$pixel-width}) and (max-width: #{$tablet-width - 1px}) {
+        @content;
+    }
+}
+@mixin tablet {
+    @media (min-width: #{$tablet-width}) and (max-width: #{$desktop-width - 1px}) {
+        @content;
+    }
+}
+
+@mixin desktop {
+    @media (min-width: #{$desktop-width}) {
+        @content;
+    }
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.active-closed-card {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: space-between;
+
+    background: #ffffff;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.23);
+    border-radius: 5px;
+    padding: 10px;
+    font-family: 'Poppins', sans-serif;
+
+    width: 95%;
+    margin: 3% auto;
+    color: #494d57;
+
+    @include tablet {
+        width: 45%;
+    }
+    @include desktop {
+        width: 30%;
+        margin: 2% auto;
+    }
+    .date {
+        color: rgba(73, 77, 87, 0.7);
+        align-self: flex-end;
+        p {
+            font-style: italic;
+            font-size: 0.8rem;
+        }
+    }
+
+    .patient-name,
+    .bystander-name,
+    .no-units,
+    .donors-assigned,
+    .blood-group {
+        font-size: 0.9rem;
+        width: 100%;
+
+        p {
+            color: rgba(73, 77, 87, 0.7);
+            padding: 3px;
+            padding-top: 8px;
+        }
+        div {
+            width: 100%;
+            background: #f4f4f4;
+            border-radius: 5px;
+            padding: 10px 20px;
+        }
+    }
+
+    .blood-group {
+        div {
+            font-weight: 600;
+            text-align: center;
+        }
+    }
+
+    .unit-assigned-details {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+        width: 100%;
+        div {
+            &:first-child,
+            &:last-child {
+                div {
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                }
+            }
+
+            &:first-child {
+                padding-right: 6%;
+            }
+        }
+    }
+
+    .button-section {
+        margin: 15px 0;
+        padding-top: 8px;
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+
+        width: 100%;
+        a {
+            text-decoration: none;
+            color: #494d57;
+            cursor: pointer;
+            padding: 8px 20px;
+            border: 1px solid #6b6b6b;
+            box-sizing: border-box;
+            border-radius: 6px;
+
+            display: flex;
+            align-items: center;
+            justify-content: space-around;
+
+            img {
+                padding-right: 10px;
+            }
+
+            transition: transform ease-in-out 50ms;
+            &:active {
+                transform: scale(0.95);
+            }
+        }
+    }
+}

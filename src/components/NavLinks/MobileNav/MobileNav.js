@@ -30,7 +30,7 @@ export default function MobileNav({ changeHamburgerStatus, onLogout }) {
 
                 <li>
                     <Link
-                        to="/main/donors/view"
+                        to="/main/donors/view/edit"
                         onClick={changeHamburgerStatus}
                     >
                         Available Donors

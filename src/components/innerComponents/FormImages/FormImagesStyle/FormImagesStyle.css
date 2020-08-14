@@ -1,0 +1,46 @@
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+.form-images {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.form-images img {
+  width: 150px;
+  margin-bottom: 20px;
+}
+
+@media (min-width: 411px) and (max-width: 767px) {
+  .form-images img {
+    width: 150px;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1023px) {
+  .form-images img {
+    width: 200px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .form-images img {
+    width: 200px;
+  }
+}
+/*# sourceMappingURL=FormImagesStyle.css.map */

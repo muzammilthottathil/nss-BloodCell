@@ -43,7 +43,9 @@ export default function DesktopNav({ onLogout }) {
                     <span>Donor</span>
                     <ul>
                         <li>
-                            <Link to="/main/donors/view">Available Donors</Link>
+                            <Link to="/main/donors/view/edit">
+                                Available Donors
+                            </Link>
                         </li>
                         <li>
                             <Link to="/main/donors/add">Add Donor</Link>

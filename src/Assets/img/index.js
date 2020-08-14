@@ -12,3 +12,6 @@ export const addIcon = require('./addIcon.svg');
 export const showDetailIcon = require('./info.svg');
 export const closeIcon = require('./closeIcon.svg');
 export const assignIcon = require('./assignIcon.svg');
+export const donorEditIcon = require('./donorEditIcon.svg');
+export const phone = require('./phone.svg');
+export const addDonorImage = require('./addDonor.svg');

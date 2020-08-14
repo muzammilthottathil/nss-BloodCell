@@ -1,0 +1,117 @@
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+.hospital-card-component {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  background: #ffffff;
+  -webkit-box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.23);
+          box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.23);
+  border-radius: 5px;
+  padding: 10px;
+  font-family: 'Poppins', sans-serif;
+  width: 95%;
+  margin: 3% auto;
+  color: #494d57;
+}
+
+@media (min-width: 768px) and (max-width: 1023px) {
+  .hospital-card-component {
+    width: 45%;
+  }
+}
+
+@media (min-width: 1024px) {
+  .hospital-card-component {
+    width: 30%;
+    margin: 2% auto;
+  }
+}
+
+.hospital-card-component .hospital-name,
+.hospital-card-component .address,
+.hospital-card-component .landmark {
+  font-size: 0.9rem;
+  width: 100%;
+}
+
+.hospital-card-component .hospital-name p,
+.hospital-card-component .address p,
+.hospital-card-component .landmark p {
+  color: rgba(73, 77, 87, 0.7);
+  padding: 3px;
+  padding-top: 8px;
+}
+
+.hospital-card-component .hospital-name div,
+.hospital-card-component .address div,
+.hospital-card-component .landmark div {
+  width: 100%;
+  background: #f4f4f4;
+  border-radius: 5px;
+  padding: 10px 20px;
+}
+
+.hospital-card-component .hospital-name div,
+.hospital-card-component .contact div {
+  font-weight: 500;
+}
+
+@media (min-width: 768px) and (max-width: 1023px) {
+  .hospital-card-component .address div {
+    min-height: 150px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .hospital-card-component .address div {
+    min-height: 200px;
+  }
+}
+
+.hospital-card-component .contact {
+  background: #f4f4f4;
+  border-radius: 5px;
+  margin-top: 10px;
+  padding: 10px 20px;
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+@media (min-width: 1024px) {
+  .hospital-card-component .contact {
+    margin-top: 25px;
+  }
+}
+
+.hospital-card-component .contact div {
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  text-align: center;
+}
+/*# sourceMappingURL=HospitalCardStyle.css.map */

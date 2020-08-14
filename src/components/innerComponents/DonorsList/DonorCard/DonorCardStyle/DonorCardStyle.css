@@ -1,0 +1,194 @@
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+.donor-card-component {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  background: #ffffff;
+  -webkit-box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.23);
+          box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.23);
+  border-radius: 5px;
+  padding: 10px;
+  font-family: 'Poppins', sans-serif;
+  width: 95%;
+  margin: 3% auto;
+  color: #494d57;
+}
+
+@media (min-width: 768px) and (max-width: 1023px) {
+  .donor-card-component {
+    width: 45%;
+  }
+}
+
+@media (min-width: 1024px) {
+  .donor-card-component {
+    width: 30%;
+    margin: 2% auto;
+  }
+}
+
+.donor-card-component .last-donation {
+  color: rgba(73, 77, 87, 0.7);
+  -ms-flex-item-align: end;
+      align-self: flex-end;
+}
+
+.donor-card-component .last-donation p {
+  font-style: italic;
+  font-size: 0.8rem;
+}
+
+.donor-card-component .name,
+.donor-card-component .department,
+.donor-card-component .height,
+.donor-card-component .weight,
+.donor-card-component .year-of-admin,
+.donor-card-component .blood-group {
+  font-size: 0.9rem;
+  width: 100%;
+}
+
+.donor-card-component .name p,
+.donor-card-component .department p,
+.donor-card-component .height p,
+.donor-card-component .weight p,
+.donor-card-component .year-of-admin p,
+.donor-card-component .blood-group p {
+  color: rgba(73, 77, 87, 0.7);
+  padding: 3px;
+  padding-top: 8px;
+}
+
+.donor-card-component .name div,
+.donor-card-component .department div,
+.donor-card-component .height div,
+.donor-card-component .weight div,
+.donor-card-component .year-of-admin div,
+.donor-card-component .blood-group div {
+  width: 100%;
+  background: #f4f4f4;
+  border-radius: 5px;
+  padding: 10px 20px;
+}
+
+.donor-card-component .name div,
+.donor-card-component .blood-group div,
+.donor-card-component .contact div {
+  font-weight: 500;
+}
+
+.donor-card-component .body-features,
+.donor-card-component .other-data {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  width: 100%;
+}
+
+.donor-card-component .body-features div:first-child div, .donor-card-component .body-features div:last-child div,
+.donor-card-component .other-data div:first-child div,
+.donor-card-component .other-data div:last-child div {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.donor-card-component .body-features div:first-child,
+.donor-card-component .other-data div:first-child {
+  padding-right: 6%;
+}
+
+.donor-card-component .contact {
+  background: #f4f4f4;
+  border-radius: 5px;
+  margin-top: 10px;
+  padding: 10px 20px;
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+@media (min-width: 1024px) {
+  .donor-card-component .contact {
+    margin-top: 25px;
+  }
+}
+
+.donor-card-component .contact div {
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  text-align: center;
+}
+
+.donor-card-component .button {
+  margin: 15px 0;
+  padding-top: 8px;
+  -ms-flex-item-align: end;
+      align-self: flex-end;
+  -webkit-transition: -webkit-transform ease-in-out 50ms;
+  transition: -webkit-transform ease-in-out 50ms;
+  transition: transform ease-in-out 50ms;
+  transition: transform ease-in-out 50ms, -webkit-transform ease-in-out 50ms;
+}
+
+.donor-card-component .button a {
+  text-decoration: none;
+  color: #494d57;
+  cursor: pointer;
+  padding: 8px 20px;
+  border: 1px solid #6b6b6b;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  border-radius: 6px;
+}
+
+.donor-card-component .button a img {
+  padding-right: 10px;
+}
+
+.donor-card-component .button:active {
+  -webkit-transform: scale(0.95);
+          transform: scale(0.95);
+}
+/*# sourceMappingURL=DonorCardStyle.css.map */

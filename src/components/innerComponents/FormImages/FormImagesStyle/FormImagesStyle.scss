@@ -1,0 +1,47 @@
+$pixel-width: 411px;
+$tablet-width: 768px;
+$desktop-width: 1024px;
+
+@mixin pixel {
+    @media (min-width: #{$pixel-width}) and (max-width: #{$tablet-width - 1px}) {
+        @content;
+    }
+}
+@mixin tablet {
+    @media (min-width: #{$tablet-width}) and (max-width: #{$desktop-width - 1px}) {
+        @content;
+    }
+}
+
+@mixin desktop {
+    @media (min-width: #{$desktop-width}) {
+        @content;
+    }
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.form-images {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+
+    img {
+        width: 150px;
+        margin-bottom: 20px;
+        @include pixel {
+            width: 150px;
+        }
+        @include tablet {
+            width: 200px;
+        }
+        @include desktop {
+            width: 200px;
+        }
+    }
+}
