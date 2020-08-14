@@ -2,8 +2,10 @@ import React from 'react';
 import './LoginBoxStyle/LoginBoxStyle.css';
 import { useForm } from '../useForm';
 import auth from '../auth';
+import { connect } from 'react-redux';
+import * as actions from '../../actions';
 
-export default function LoginBox({ props }) {
+function LoginBox(props) {
     const [value, handleChange] = useForm({
         username: '',
         password: ''
@@ -11,13 +13,14 @@ export default function LoginBox({ props }) {
 
     const onLoginSubmit = (event) => {
         event.preventDefault();
-        auth.login(
-            () => {
-                props.history.push('/main/requirements/active');
-            },
-            value.username,
-            value.password
-        );
+        props.loginUser({ email: value.username, password: value.password });
+        // auth.login(
+        //     () => {
+        //         props.history.push('/main/requirements/active');
+        //     },
+        //     value.username,
+        //     value.password
+        // );
     };
 
     return (
@@ -47,4 +50,6 @@ export default function LoginBox({ props }) {
             </form>
         </div>
     );
-}
+};
+
+export default connect(null, actions)(LoginBox)

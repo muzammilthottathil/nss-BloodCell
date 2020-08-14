@@ -1,21 +1,23 @@
-import React from 'react';
+import React, { Component} from 'react';
 import { Route, Redirect } from 'react-router-dom';
-import auth from './auth';
 
-export const ProtectedRoute = ({ component: Component, ...rest }) => {
+function ProtectedRoute({ component: Component, props, ...rest }){
+    console.log('Main props', props);
     return (
         <Route
             {...rest}
-            render={(props) => {
-                if (auth.authenticated) {
-                    return <Component {...props} />;
+            render={(props1) => {
+                // console.log('These are the props');;
+                // console.log(props);
+                if (props.auth) {
+                    return <Component {...props1} />;
                 } else {
                     return (
                         <Redirect
                             to={{
                                 pathname: '/',
                                 state: {
-                                    from: props.location
+                                    from: props1.location
                                 }
                             }}
                         />
@@ -25,3 +27,6 @@ export const ProtectedRoute = ({ component: Component, ...rest }) => {
         />
     );
 };
+
+
+export default ProtectedRoute;

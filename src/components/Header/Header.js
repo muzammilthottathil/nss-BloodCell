@@ -4,15 +4,19 @@ import './HeaderStyle/HeaderStyle.css';
 import { hamburgerLines } from '../../Assets/img';
 import NavLinks from '../NavLinks/NavLinks';
 import auth from '../auth';
+import { connect } from 'react-redux';
+import * as actions from '../../actions';
 
-export default function Header({ props }) {
+function Header(props) {
     const [hamburgerStatus, setHamburgerStatus] = useState(false);
 
     const onLogout = () => {
         // console.log(auth.isAuthenticated());
-        auth.logout(() => {
-            props.history.push('/');
-        });
+        // auth.logout(() => {
+        //     props.history.push('/');
+        // });
+        props.logoutUser();
+
     };
 
     // console.log(hamburgerStatus);
@@ -38,4 +42,7 @@ export default function Header({ props }) {
             />
         </div>
     );
-}
+};
+
+export default connect(null, actions)(Header); 
+
