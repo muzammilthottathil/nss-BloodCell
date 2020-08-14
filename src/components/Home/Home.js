@@ -5,8 +5,7 @@ import { bloodHandPulse } from '../../Assets/img';
 import './HomeStyle/HomeStyle.css';
 import Footer from '../Footer/Footer';
 import LoginBox from '../LoginBox/LoginBox';
-import { connect } from 'react-redux'
-import Main from '../Main';
+import { connect } from 'react-redux';
 
 class Home extends Component {
 
@@ -46,9 +45,11 @@ class Home extends Component {
 
     render() {
         return (
-            <div className="home-page">
-                { this.renderHelper() }
-            </div>
+            <div>
+                <div className="home-page">
+                    { this.renderHelper() }
+                </div>
+            </div>    
         );
     }
 }

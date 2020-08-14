@@ -1,8 +1,8 @@
-import React, { Component} from 'react';
+import React from 'react';
 import { Route, Redirect } from 'react-router-dom';
 
 function ProtectedRoute({ component: Component, props, ...rest }){
-    console.log('Main props', props);
+    // console.log('Main props', props);
     return (
         <Route
             {...rest}

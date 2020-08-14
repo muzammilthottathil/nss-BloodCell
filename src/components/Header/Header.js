@@ -3,7 +3,6 @@ import LogoSection from '../LogoSection/LogoSection';
 import './HeaderStyle/HeaderStyle.css';
 import { hamburgerLines } from '../../Assets/img';
 import NavLinks from '../NavLinks/NavLinks';
-import auth from '../auth';
 import { connect } from 'react-redux';
 import * as actions from '../../actions';
 

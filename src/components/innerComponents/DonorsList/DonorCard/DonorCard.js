@@ -5,6 +5,7 @@ import './DonorCardStyle/DonorCardStyle.css';
 import { Link } from 'react-router-dom';
 
 export default function DonorCard({ details, defaultValue = true }) {
+    console.log(details);
     return (
         <div className="donor-card-component">
             <div className="last-donation">
@@ -16,7 +17,7 @@ export default function DonorCard({ details, defaultValue = true }) {
             </div>
             <div className="department">
                 <p>Department</p>
-                <div className="dept-of-donor">{details.dept}</div>
+                <div className="dept-of-donor">{details.department}</div>
             </div>
             {defaultValue && (
                 <div className="body-features">
@@ -34,7 +35,7 @@ export default function DonorCard({ details, defaultValue = true }) {
             <div className="other-data">
                 <div className="year-of-admin">
                     <p>Year of Admn</p>
-                    <div className="year-of-donor">{details.yearOfAdmin}</div>
+                    <div className="year-of-donor">{details.yearOfAdmission}</div>
                 </div>
                 <div className="blood-group">
                     <p>Blood Group</p>
@@ -43,7 +44,7 @@ export default function DonorCard({ details, defaultValue = true }) {
             </div>
             <div className="contact">
                 <img src={phone} alt="" />
-                <div className="contact-of-donor">{details.contact}</div>
+                <div className="contact-of-donor">{details.contactNo}</div>
             </div>
             <div className="button">
                 {(defaultValue && (

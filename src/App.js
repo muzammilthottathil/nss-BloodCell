@@ -11,6 +11,9 @@ class App extends Component {
     componentWillMount() {
         this.props.fetchUser();
     }
+    componentDidMount() {
+        console.log(this.props);
+    }
 
     render() {
         return (

@@ -1,7 +1,6 @@
 import React from 'react';
 import './LoginBoxStyle/LoginBoxStyle.css';
 import { useForm } from '../useForm';
-import auth from '../auth';
 import { connect } from 'react-redux';
 import * as actions from '../../actions';
 
