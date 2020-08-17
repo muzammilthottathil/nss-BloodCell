@@ -2,9 +2,11 @@ import React from 'react';
 
 import './DonorFormStyle/DonorFormStyle.css';
 import { useForm } from '../../useForm';
+import { connect } from 'react-redux';
+import * as actions from '../../../actions';
 
-export default function DonorForm({ props }) {
-    const [value, handleChange] = useForm({
+function DonorForm(props) {
+    const [value, handleChange, resetForm] = useForm({
         donorName: '',
         donorDepartment: '',
         bloodGroup: '',
@@ -16,17 +18,21 @@ export default function DonorForm({ props }) {
 
     const onSavingForm = (event) => {
         event.preventDefault();
-        console.log(value.donorName);
-        console.log(value.donorDepartment);
-        console.log(value.bloodGroup);
-        console.log(value.yearOfAdmin);
-        console.log(value.height);
-        console.log(value.weight);
-        console.log(value.contact);
 
-        setTimeout(() => {
-            props.history.push('/main/donors/view/edit');
-        }, 2000);
+        props.addDonor({
+            name: value.donorName,
+            yearOfAdmission: value.yearOfAdmin,
+            department: value.donorDepartment,
+            contactNo: value.contact,
+            bloodGroup: value.bloodGroup,
+            height: value.height,
+            weight: value.weight,
+            lastDonation: null
+        });
+
+        resetForm();
+        alert('Saved SuccessFully...');
+        props.props.history.push('/main/donors/view/edit');
     };
 
     return (
@@ -118,3 +124,4 @@ export default function DonorForm({ props }) {
         </div>
     );
 }
+export default connect(null, actions)(DonorForm);

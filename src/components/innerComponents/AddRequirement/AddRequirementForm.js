@@ -1,65 +1,88 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import './AddRequirementFormStyle/AddRequirementFormStyle.css';
 import { useForm } from '../../useForm';
 import { createDateFormat } from '../../../Utils';
+import { useSelector, connect } from 'react-redux';
+import * as actions from '../../../actions';
 
-export default function AddRequirementForm({ props }) {
-    const [value, handleChange] = useForm({
-        patientName: '',
-        byStanderName: '',
+function AddRequirementForm(props) {
+    const hospitals = useSelector((state) => state.hospitals);
+
+    const getHospitalList = () => {
+        if (!hospitals) {
+            console.log('Async call for fetching hospitals list intiated');
+            props.fetchHospitals();
+        }
+    };
+
+    const [value, handleChange, resetForm] = useForm({
+        patient: '',
+        bystander: '',
         bloodGroup: '',
         noOfUnits: '',
         typeOfDonation: '',
         hospital: '',
-        contact: '',
-        dateOfRequirement: ''
+        contactNo: '',
+        date: ''
     });
+
+    const bloodGroups = [
+        'Any',
+        'A+ve',
+        'A-ve',
+        'B+ve',
+        'B-ve',
+        'AB+ve',
+        'AB-ve',
+        'O+ve',
+        'O-ve'
+    ];
+
+    const donationType = [
+        'Whole Blood Donation',
+        'Power Red Donation',
+        'Platelet Doantion',
+        'Plasma Donation'
+    ];
+    console.log(props);
 
     const onSavingForm = (event) => {
         event.preventDefault();
-        console.log(value.patientName);
-        console.log(value.byStanderName);
-        console.log(value.bloodGroup);
-        console.log(value.noOfUnits);
-        console.log(value.hospital);
-        console.log(value.typeOfDonation);
-        console.log(value.contact);
-        let dateValue = createDateFormat(value.dateOfRequirement);
-        console.log(dateValue);
-        setTimeout(() => {
-            props.history.push('/main/requirements/active');
-        }, 2000);
+        props.addRequirement({
+            patient: value.patient,
+            bystander: value.bystander,
+            bloodGroup: value.bloodGroup,
+            noOfUnits: value.noOfUnits,
+            typeOfDonation: value.typeOfDonation,
+            hospital: value.hospital,
+            contactNo: value.contactNo,
+            date: createDateFormat(value.date)
+        });
+
+        resetForm();
+        alert('Submitted SuccessFully...');
+        props.props.history.push('/main/requirements/active');
     };
 
-    const hospitalDataSet = [
-        {
-            h_id: 'hospital_1',
-            name: 'Shivagamy ka priy puthr Amerander',
-            contact: '+919798959694',
-            address:
-                'hello this is something bad about the world, that it is good.\
-                 Just joking typing to complete the address space.\
-                 hello this is something bad about the world, that it is good.\
-                 Just joking typing to complete the address space.',
-            landmark: 'No landmark is currently available'
-        },
-        {
-            h_id: 'hospital_2',
-            name: 'Shivagamy ka priy puthr Amerander',
-            contact: '+919798959694',
-            address:
-                'hello this is something bad about the world, that it is good. Just joking typing to complete the address space.',
-            landmark: 'No landmark is currently available'
-        },
-        {
-            h_id: 'hospital_3',
-            name: 'Shivagamy ka priy puthr Amerander',
-            contact: '+919798959694',
-            address:
-                'hello this is something bad about the world, that it is good. Just joking typing to complete the address space.',
-            landmark: 'No landmark is currently available'
+    const hospitalNameRenderHelper = () => {
+        if (hospitals) {
+            return (
+                <>
+                    {hospitals.map((data, key) => (
+                        <option value={data.name} key={key}>
+                            {data.name}
+                        </option>
+                    ))}
+                </>
+            );
+        } else {
+            return null;
         }
-    ];
+    };
+
+    useEffect(() => {
+        getHospitalList();
+    });
 
     return (
         <div className="add-req-form">
@@ -68,7 +91,7 @@ export default function AddRequirementForm({ props }) {
                     <p> Patient Name</p>
                     <input
                         type="text"
-                        name="patientName"
+                        name="patient"
                         required
                         onChange={handleChange}
                     />
@@ -78,7 +101,7 @@ export default function AddRequirementForm({ props }) {
                     <p>Name of Bystander</p>
                     <input
                         type="text"
-                        name="byStanderName"
+                        name="bystander"
                         onChange={handleChange}
                     />
                 </div>
@@ -87,15 +110,11 @@ export default function AddRequirementForm({ props }) {
                     <p>Blood Group</p>
                     <select name="bloodGroup" required onChange={handleChange}>
                         <option defaultValue>Select Group</option>
-                        <option value="Any">Any</option>
-                        <option value="A+ve">A+ve</option>
-                        <option value="A-ve">A-ve</option>
-                        <option value="B+ve">B+ve</option>
-                        <option value="B-ve">B-ve</option>
-                        <option value="AB+ve">AB+ve</option>
-                        <option value="AB-ve">AB-ve</option>
-                        <option value="O+ve">O+ve</option>
-                        <option value="O-ve">O-ve</option>
+                        {bloodGroups.map((group, index) => (
+                            <option value={group} key={index}>
+                                {group}
+                            </option>
+                        ))}
                     </select>
                 </div>
                 <div className="no-units">
@@ -117,34 +136,26 @@ export default function AddRequirementForm({ props }) {
                         onChange={handleChange}
                     >
                         <option defaultValue>Select type</option>
-                        <option value="Whole Blood Donation">
-                            Whole Blood Donation
-                        </option>
-                        <option value="Power Red Donation">
-                            Power Red Donation
-                        </option>
-                        <option value="Platelet Doantion">
-                            Platelet Doantion
-                        </option>
-                        <option value="Plasma Donation">Plasma Donation</option>
+
+                        {donationType.map((types, key) => (
+                            <option value={types} key={key}>
+                                {types}
+                            </option>
+                        ))}
                     </select>
                 </div>
                 <div className="hospital">
                     <p>Hospital</p>
                     <select name="hospital" required onChange={handleChange}>
                         <option defaultValue>Select Hospital</option>
-                        {hospitalDataSet.map((data, key) => (
-                            <option value={data.name} key={key}>
-                                {data.name}
-                            </option>
-                        ))}
+                        {hospitalNameRenderHelper()}
                     </select>
                 </div>
                 <div className="contact">
                     <p>Contact</p>
                     <input
                         type="text"
-                        name="contact"
+                        name="contactNo"
                         required
                         onChange={handleChange}
                     />
@@ -154,7 +165,7 @@ export default function AddRequirementForm({ props }) {
 
                     <input
                         type="date"
-                        name="dateOfRequirement"
+                        name="date"
                         required
                         onChange={handleChange}
                     />
@@ -168,3 +179,5 @@ export default function AddRequirementForm({ props }) {
         </div>
     );
 }
+
+export default connect(null, actions)(AddRequirementForm);

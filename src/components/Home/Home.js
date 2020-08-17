@@ -1,18 +1,17 @@
 import React, { Component } from 'react';
-import { Redirect } from 'react-router-dom'
+import { Redirect } from 'react-router-dom';
 import LogoSection from '../LogoSection/LogoSection';
 import { bloodHandPulse } from '../../Assets/img';
 import './HomeStyle/HomeStyle.css';
-import Footer from '../Footer/Footer';
+import Footer from '../Footer';
 import LoginBox from '../LoginBox/LoginBox';
 import { connect } from 'react-redux';
 
 class Home extends Component {
-
     renderHelper() {
-        switch(this.props.auth) {
+        switch (this.props.auth) {
             case null:
-                return 'We are not sure what to render'
+                return 'We are not sure what to render';
             case false:
                 return (
                     <div>
@@ -20,7 +19,7 @@ class Home extends Component {
                         <div className="home-page-content">
                             <img src={bloodHandPulse} alt="" />
                             <h1>Blood Cell</h1>
-                            <LoginBox props={this.props}/>
+                            <LoginBox props={this.props} />
                         </div>
                         <Footer />
                     </div>
@@ -37,18 +36,15 @@ class Home extends Component {
                             }}
                         />
                     </div>
-                    
-                )
-        }       
+                );
+        }
     }
 
     render() {
         return (
             <div>
-                <div className="home-page">
-                    { this.renderHelper() }
-                </div>
-            </div>    
+                <div className="home-page">{this.renderHelper()}</div>
+            </div>
         );
     }
 }

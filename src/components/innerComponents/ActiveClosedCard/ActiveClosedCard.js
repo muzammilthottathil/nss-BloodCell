@@ -44,13 +44,21 @@ export default function ActiveClosedCard({ details, type }) {
 
                 <div className="donors-assigned">
                     <p>Donors Assigned</p>
-                    <div>{details.donor}</div>
+                    <div>{details.donors.length}</div>
                 </div>
             </div>
 
             <div className="button-section">
                 <div className="show-details">
-                    <Link to="#">
+                    <Link
+                        to={{
+                            pathname: '/main/details',
+                            data: {
+                                details,
+                                typeOfCard
+                            }
+                        }}
+                    >
                         <img src={showDetailIcon} alt="" />
                         Details
                     </Link>
@@ -60,7 +68,8 @@ export default function ActiveClosedCard({ details, type }) {
                     <div className="assigning-donor">
                         <Link
                             to={{
-                                pathname: '/main/donors/view/assign'
+                                pathname: '/main/donors/view/assign',
+                                details
                             }}
                         >
                             <img src={assignIcon} alt="" />

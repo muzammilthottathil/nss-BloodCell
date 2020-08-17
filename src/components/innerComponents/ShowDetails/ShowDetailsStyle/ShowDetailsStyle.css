@@ -1,0 +1,319 @@
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+.show-detail-complete-window {
+  min-height: 75vh;
+}
+
+.show-details-section {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  background: #ffffff;
+  -webkit-box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.23);
+          box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.23);
+  border-radius: 5px;
+  padding: 10px;
+  font-family: 'Poppins', sans-serif;
+  width: 95%;
+  margin: 3% auto;
+  color: #494d57;
+}
+
+@media (min-width: 768px) and (max-width: 1023px) {
+  .show-details-section {
+    width: 45%;
+  }
+}
+
+@media (min-width: 1024px) {
+  .show-details-section {
+    width: 50%;
+    margin: 2% auto;
+  }
+}
+
+.show-details-section .close-req-button {
+  -ms-flex-item-align: end;
+      align-self: flex-end;
+  padding: 5px;
+  padding-right: 5px;
+  -webkit-transition: -webkit-transform ease-in-out 50ms;
+  transition: -webkit-transform ease-in-out 50ms;
+  transition: transform ease-in-out 50ms;
+  transition: transform ease-in-out 50ms, -webkit-transform ease-in-out 50ms;
+}
+
+@media (min-width: 1024px) {
+  .show-details-section .close-req-button {
+    font-size: 1.1rem;
+  }
+}
+
+.show-details-section .close-req-button a {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  text-decoration: none;
+  color: #494d57;
+  cursor: pointer;
+  padding: 8px 20px;
+  border: 1px solid #6b6b6b;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  border-radius: 6px;
+}
+
+.show-details-section .close-req-button a img {
+  padding-right: 10px;
+}
+
+.show-details-section .close-req-button:active {
+  -webkit-transform: scale(0.95);
+          transform: scale(0.95);
+}
+
+.show-details-section .date {
+  background: #949191;
+  border-radius: 5px;
+  padding: 8px 20px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 100%;
+  color: #fff;
+  font-weight: 500;
+  margin: 10px 0;
+}
+
+@media (min-width: 1024px) {
+  .show-details-section .date {
+    padding: 10px 20px;
+  }
+}
+
+.show-details-section .patient-name,
+.show-details-section .bystander-name,
+.show-details-section .hospital-name,
+.show-details-section .blood-group,
+.show-details-section .type-of-donation,
+.show-details-section .no-units,
+.show-details-section .donors-assigned {
+  font-size: 0.9rem;
+  width: 100%;
+}
+
+@media (min-width: 1024px) {
+  .show-details-section .patient-name,
+  .show-details-section .bystander-name,
+  .show-details-section .hospital-name,
+  .show-details-section .blood-group,
+  .show-details-section .type-of-donation,
+  .show-details-section .no-units,
+  .show-details-section .donors-assigned {
+    font-size: 1.1rem;
+  }
+}
+
+.show-details-section .patient-name p,
+.show-details-section .bystander-name p,
+.show-details-section .hospital-name p,
+.show-details-section .blood-group p,
+.show-details-section .type-of-donation p,
+.show-details-section .no-units p,
+.show-details-section .donors-assigned p {
+  color: rgba(73, 77, 87, 0.7);
+  padding: 3px;
+  padding-top: 8px;
+}
+
+.show-details-section .patient-name div,
+.show-details-section .bystander-name div,
+.show-details-section .hospital-name div,
+.show-details-section .blood-group div,
+.show-details-section .type-of-donation div,
+.show-details-section .no-units div,
+.show-details-section .donors-assigned div {
+  width: 100%;
+  background: #f4f4f4;
+  border-radius: 5px;
+  padding: 10px 20px;
+}
+
+@media (min-width: 1024px) {
+  .show-details-section .patient-name div,
+  .show-details-section .bystander-name div,
+  .show-details-section .hospital-name div,
+  .show-details-section .blood-group div,
+  .show-details-section .type-of-donation div,
+  .show-details-section .no-units div,
+  .show-details-section .donors-assigned div {
+    padding: 15px 20px;
+  }
+}
+
+.show-details-section .unit-assigned-details {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  width: 100%;
+}
+
+.show-details-section .unit-assigned-details div:first-child div, .show-details-section .unit-assigned-details div:last-child div {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.show-details-section .unit-assigned-details div:first-child {
+  padding-right: 6%;
+}
+
+.show-details-section .contact {
+  background: #f4f4f4;
+  border-radius: 5px;
+  margin-top: 10px;
+  padding: 10px 20px;
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+@media (min-width: 1024px) {
+  .show-details-section .contact {
+    margin-top: 25px;
+  }
+}
+
+.show-details-section .contact div {
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  text-align: center;
+}
+
+.show-details-section .assigned-donors-name {
+  font-size: 0.9rem;
+  width: 100%;
+}
+
+@media (min-width: 1024px) {
+  .show-details-section .assigned-donors-name {
+    font-size: 1.1rem;
+  }
+}
+
+.show-details-section .assigned-donors-name p {
+  color: rgba(73, 77, 87, 0.7);
+  padding: 3px;
+  padding-top: 8px;
+}
+
+.show-details-section .assigned-donors-name .assigned-donors-name-list {
+  width: 100%;
+  background: #f4f4f4;
+  border-radius: 5px;
+  padding: 10px 20px;
+}
+
+.show-details-section .assigned-donors-name .assigned-donors-name-list .name-and-delete-icon {
+  background: #ffffff;
+  -webkit-box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.25);
+          box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.25);
+  border-radius: 5px;
+  padding: 5px 10px;
+  margin: 5% 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+@media (min-width: 1024px) {
+  .show-details-section .assigned-donors-name .assigned-donors-name-list .name-and-delete-icon {
+    padding: 15px 20px;
+  }
+}
+
+.show-details-section .assigned-donors-name .assigned-donors-name-list .name-and-delete-icon img {
+  cursor: pointer;
+  -webkit-transition: -webkit-transform ease-in-out 100ms;
+  transition: -webkit-transform ease-in-out 100ms;
+  transition: transform ease-in-out 100ms;
+  transition: transform ease-in-out 100ms, -webkit-transform ease-in-out 100ms;
+}
+
+@media (min-width: 1024px) {
+  .show-details-section .assigned-donors-name .assigned-donors-name-list .name-and-delete-icon img {
+    width: 20px;
+  }
+}
+
+.show-details-section .assigned-donors-name .assigned-donors-name-list .name-and-delete-icon img:active {
+  -webkit-transform: scale(0.8);
+          transform: scale(0.8);
+}
+/*# sourceMappingURL=ShowDetailsStyle.css.map */

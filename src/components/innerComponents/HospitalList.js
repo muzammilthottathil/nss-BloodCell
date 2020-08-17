@@ -55,44 +55,48 @@ import * as actions from '../../actions';
 // }
 
 function HospitalList(props) {
-    
     const style = {
         display: 'flex',
         width: '100%',
         flexWrap: 'wrap',
         justifyContent: 'space-around'
     };
-    
-    const hospitals = useSelector(state => state.hospitals)
+    const style1 = {
+        minHeight: '75vh'
+    };
+
+    const hospitals = useSelector((state) => state.hospitals);
 
     const getHospitalList = () => {
-        if(!hospitals) {
+        if (!hospitals) {
             console.log('Async call for fetching hospitals list intiated');
             props.fetchHospitals();
         }
-    }
+    };
 
     useEffect(() => {
         getHospitalList();
-    })
+    });
 
     const renderHelper = () => {
         console.log(hospitals);
-        if(hospitals) {
+        if (hospitals) {
             return (
-                <div style={style}>
-                    {hospitals.map((data, key) => (
-                        <HospitalCard key={key} details={data} />
-                    ))}
+                <div style={style1}>
+                    <div style={style}>
+                        {hospitals.map((data, key) => (
+                            <HospitalCard key={key} details={data} />
+                        ))}
+                    </div>
                 </div>
-            )
+            );
         }
-    }
+    };
 
     return (
         <div>
             <HeadingInside headingContentInside="Available Hospitals" />
-            { renderHelper() }
+            {renderHelper()}
         </div>
     );
 }

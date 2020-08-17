@@ -5,30 +5,29 @@ import * as actions from '../../../actions';
 import './HospitalFomStyle/HospitalFomStyle.css';
 
 function HospitalFom(state) {
-    const [value, handleChange] = useForm({
+    const [value, handleChange, resetForm] = useForm({
         hospitalName: '',
         hospitalAddress: '',
         hospitalLandmark: '',
         contact: ''
     });
-
     const onSavingForm = (event) => {
         event.preventDefault();
+        state.addHospital({
+            name: value.hospitalName,
+            address: value.hospitalAddress,
+            landmark: value.hospitalLandmark,
+            contactNo: value.contact
+        });
         console.log(value.hospitalName);
         console.log(value.hospitalAddress);
         console.log(value.hospitalLandmark);
         console.log(value.contact);
 
-        state.addHospital({ 
-            name: value.hospitalName, 
-            address: value.hospitalAddress, 
-            landmark: value.hospitalLandmark, 
-            contactNo: value.contact 
-        });
-
-        setTimeout(() => {
-            state.props.history.push('/main/hospital/view');
-        }, 2000);
+        // resetForm();
+        alert('Saved SuccessFully...');
+        console.log(state);
+        state.props.history.push('/main/hospital/view');
     };
     return (
         <div className="add-hospital-form">

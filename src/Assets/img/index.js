@@ -15,3 +15,4 @@ export const assignIcon = require('./assignIcon.svg');
 export const donorEditIcon = require('./donorEditIcon.svg');
 export const phone = require('./phone.svg');
 export const addDonorImage = require('./addDonor.svg');
+export const deleteIcon = require('./delete.svg');

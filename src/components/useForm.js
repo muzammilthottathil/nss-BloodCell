@@ -10,6 +10,9 @@ export const useForm = (initialValue) => {
                 ...value,
                 [event.target.name]: event.target.value
             });
+        },
+        () => {
+            setValue(null);
         }
     ];
 };

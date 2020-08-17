@@ -1,0 +1,222 @@
+$pixel-width: 411px;
+$tablet-width: 768px;
+$desktop-width: 1024px;
+
+@mixin pixel {
+    @media (min-width: #{$pixel-width}) and (max-width: #{$tablet-width - 1px}) {
+        @content;
+    }
+}
+@mixin tablet {
+    @media (min-width: #{$tablet-width}) and (max-width: #{$desktop-width - 1px}) {
+        @content;
+    }
+}
+
+@mixin desktop {
+    @media (min-width: #{$desktop-width}) {
+        @content;
+    }
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.show-detail-complete-window {
+    min-height: 75vh;
+}
+.show-details-section {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: space-between;
+
+    background: #ffffff;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.23);
+    border-radius: 5px;
+    padding: 10px;
+    font-family: 'Poppins', sans-serif;
+
+    width: 95%;
+    margin: 3% auto;
+    color: #494d57;
+
+    @include tablet {
+        width: 45%;
+    }
+    @include desktop {
+        width: 50%;
+        margin: 2% auto;
+    }
+    .close-req-button {
+        align-self: flex-end;
+
+        padding: 5px;
+        padding-right: 5px;
+        @include desktop {
+            font-size: 1.1rem;
+        }
+
+        a {
+            display: flex;
+            align-items: center;
+            flex-direction: row;
+            text-decoration: none;
+            color: #494d57;
+            cursor: pointer;
+            padding: 8px 20px;
+            border: 1px solid #6b6b6b;
+            box-sizing: border-box;
+            border-radius: 6px;
+
+            img {
+                padding-right: 10px;
+            }
+        }
+        transition: transform ease-in-out 50ms;
+        &:active {
+            transform: scale(0.95);
+        }
+    }
+    .date {
+        background: #949191;
+        border-radius: 5px;
+        padding: 8px 20px;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        align-items: center;
+        width: 100%;
+        color: #fff;
+        font-weight: 500;
+        margin: 10px 0;
+
+        @include desktop {
+            padding: 10px 20px;
+        }
+    }
+
+    .patient-name,
+    .bystander-name,
+    .hospital-name,
+    .blood-group,
+    .type-of-donation,
+    .no-units,
+    .donors-assigned {
+        font-size: 0.9rem;
+        width: 100%;
+
+        @include desktop {
+            font-size: 1.1rem;
+        }
+
+        p {
+            color: rgba(73, 77, 87, 0.7);
+            padding: 3px;
+            padding-top: 8px;
+        }
+        div {
+            width: 100%;
+            background: #f4f4f4;
+            border-radius: 5px;
+            padding: 10px 20px;
+
+            @include desktop {
+                padding: 15px 20px;
+            }
+        }
+    }
+
+    .unit-assigned-details {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+        width: 100%;
+        div {
+            &:first-child,
+            &:last-child {
+                div {
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                }
+            }
+
+            &:first-child {
+                padding-right: 6%;
+            }
+        }
+    }
+
+    .contact {
+        background: #f4f4f4;
+        border-radius: 5px;
+        margin-top: 10px;
+
+        @include desktop {
+            margin-top: 25px;
+        }
+
+        padding: 10px 20px;
+        width: 100%;
+
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+
+        div {
+            flex: 1;
+            text-align: center;
+        }
+    }
+    .assigned-donors-name {
+        font-size: 0.9rem;
+        width: 100%;
+        @include desktop {
+            font-size: 1.1rem;
+        }
+
+        p {
+            color: rgba(73, 77, 87, 0.7);
+            padding: 3px;
+            padding-top: 8px;
+        }
+        .assigned-donors-name-list {
+            width: 100%;
+            background: #f4f4f4;
+            border-radius: 5px;
+            padding: 10px 20px;
+
+            .name-and-delete-icon {
+                background: #ffffff;
+                box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.25);
+                border-radius: 5px;
+                padding: 5px 10px;
+                margin: 5% 0;
+
+                display: flex;
+                flex-direction: row;
+                justify-content: space-between;
+                align-items: center;
+
+                @include desktop {
+                    padding: 15px 20px;
+                }
+                img {
+                    cursor: pointer;
+                    transition: transform ease-in-out 100ms;
+
+                    @include desktop {
+                        width: 20px;
+                    }
+                    &:active {
+                        transform: scale(0.8);
+                    }
+                }
+            }
+        }
+    }
+}

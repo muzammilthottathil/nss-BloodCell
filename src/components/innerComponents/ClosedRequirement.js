@@ -4,24 +4,25 @@ import ActiveClosedCard from './ActiveClosedCard/ActiveClosedCard';
 import { connect, useSelector } from 'react-redux';
 import * as actions from '../../actions';
 
-
 function ClosedRequirement(props) {
-    
     const style = {
         display: 'flex',
         width: '100%',
         flexWrap: 'wrap',
         justifyContent: 'space-around'
     };
+    const style1 = {
+        minHeight: '75vh'
+    };
 
-    const closedRequirements = useSelector(state => state.closedRequirements);
+    const closedRequirements = useSelector((state) => state.closedRequirements);
 
     const getClosedRequirementList = () => {
-        if(!closedRequirements) {
+        if (!closedRequirements) {
             console.log('Async call for fetching close requirements');
             props.fetchClosedRequirements();
         }
-    }
+    };
 
     useEffect(() => {
         getClosedRequirementList();
@@ -29,23 +30,24 @@ function ClosedRequirement(props) {
 
     const renderHelper = () => {
         // console.log(closedRequirements);
-        if(closedRequirements) {
-            return(
-                <div style={style}>
-                    {closedRequirements.map((data) => (
-                        <ActiveClosedCard
-                            key={data._id}
-                            details={data}
-                            type={'closed'}
-                        />
-                    ))}
+        if (closedRequirements) {
+            return (
+                <div style={style1}>
+                    <div style={style}>
+                        {closedRequirements.map((data) => (
+                            <ActiveClosedCard
+                                key={data._id}
+                                details={data}
+                                type={'closed'}
+                            />
+                        ))}
+                    </div>
                 </div>
-            )    
+            );
         } else {
-            return <div>Waiting</div>
+            return <div>Waiting</div>;
         }
-    }
-
+    };
 
     return (
         <div>
@@ -56,7 +58,6 @@ function ClosedRequirement(props) {
 }
 
 export default connect(null, actions)(ClosedRequirement);
-
 
 // export default function ClosedRequirement() {
 //     const closedDataSet = [
@@ -138,7 +139,3 @@ export default connect(null, actions)(ClosedRequirement);
 //         </div>
 //     );
 // }
-
-
-
-

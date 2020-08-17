@@ -4,8 +4,15 @@ import { phone, donorEditIcon, assignIcon } from '../../../../Assets/img';
 import './DonorCardStyle/DonorCardStyle.css';
 import { Link } from 'react-router-dom';
 
-export default function DonorCard({ details, defaultValue = true }) {
-    // console.log(details);
+export default function DonorCard({
+    details,
+    defaultValue = true,
+    createAssignAPI
+}) {
+    const setAssignDonorID = () => {
+        createAssignAPI(details._id);
+    };
+
     return (
         <div className="donor-card-component">
             <div className="last-donation">
@@ -35,7 +42,9 @@ export default function DonorCard({ details, defaultValue = true }) {
             <div className="other-data">
                 <div className="year-of-admin">
                     <p>Year of Admn</p>
-                    <div className="year-of-donor">{details.yearOfAdmission}</div>
+                    <div className="year-of-donor">
+                        {details.yearOfAdmission}
+                    </div>
                 </div>
                 <div className="blood-group">
                     <p>Blood Group</p>
@@ -53,7 +62,7 @@ export default function DonorCard({ details, defaultValue = true }) {
                         Edit
                     </Link>
                 )) || (
-                    <Link to="#">
+                    <Link to="#" onClick={setAssignDonorID}>
                         <img src={assignIcon} alt="" />
                         Assign
                     </Link>

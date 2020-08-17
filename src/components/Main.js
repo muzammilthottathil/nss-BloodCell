@@ -1,6 +1,6 @@
 import React from 'react';
 import Header from './Header/Header';
-import Footer from './Footer/Footer';
+import Footer from './Footer';
 import AddRequirement from './innerComponents/AddRequirement/AddRequirement';
 import ActiveRequirement from './innerComponents/ActiveRequirement';
 import ClosedRequirement from './innerComponents/ClosedRequirement';
@@ -8,6 +8,7 @@ import HospitalList from './innerComponents/HospitalList';
 import AddHospital from './innerComponents/AddHospital/AddHospital';
 import DonorsList from './innerComponents/DonorsList/DonorsList';
 import AddDonor from './innerComponents/AddDonor/AddDonor';
+import ShowDetails from './innerComponents/ShowDetails/ShowDetails';
 
 import { BrowserRouter as Router, Route } from 'react-router-dom';
 
@@ -38,6 +39,7 @@ export default function Main(props) {
                 component={DonorsList}
             />
             <Route path="/main/donors/add" exact component={AddDonor} />
+            <Route path="/main/details" exact component={ShowDetails} />
             <Footer />
         </Router>
     );
