@@ -1,23 +1,23 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "243a79f38d654bff16a6ab72bb005b50",
+    "revision": "ad54114333fb5177f1d76bc57ca31ccd",
     "url": "/nss-BloodCell/index.html"
   },
   {
-    "revision": "91fac2c46192eb798b14",
-    "url": "/nss-BloodCell/static/css/main.2365de46.chunk.css"
+    "revision": "e44c1dfd97465de9bffc",
+    "url": "/nss-BloodCell/static/css/main.63e08d05.chunk.css"
   },
   {
-    "revision": "737859f91162768922ec",
-    "url": "/nss-BloodCell/static/js/2.b08d2a1c.chunk.js"
+    "revision": "025d9a5c309865a387ae",
+    "url": "/nss-BloodCell/static/js/2.e6dba3bf.chunk.js"
   },
   {
     "revision": "c64c486544348f10a6d6c716950bc223",
-    "url": "/nss-BloodCell/static/js/2.b08d2a1c.chunk.js.LICENSE.txt"
+    "url": "/nss-BloodCell/static/js/2.e6dba3bf.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "91fac2c46192eb798b14",
-    "url": "/nss-BloodCell/static/js/main.72f2f81e.chunk.js"
+    "revision": "e44c1dfd97465de9bffc",
+    "url": "/nss-BloodCell/static/js/main.fa3bf248.chunk.js"
   },
   {
     "revision": "bdfca6b5f185ef5feb59",
@@ -46,6 +46,10 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
     "revision": "27b1ef1855ef363a713391518c68ac76",
     "url": "/nss-BloodCell/static/media/cross.27b1ef18.svg"
+  },
+  {
+    "revision": "5f96c02a0f4764ff2dc9d651e96f8ed1",
+    "url": "/nss-BloodCell/static/media/delete.5f96c02a.svg"
   },
   {
     "revision": "6198455fbfc5c5cbe2a9c2a1dd9b689f",
